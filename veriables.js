@@ -1,5 +1,5 @@
 const inbox = 100;
-let user = "Ed";
+let user = "Edd";
 
 
 //camelCase

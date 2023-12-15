@@ -11,7 +11,7 @@ console.log (typeof name);
 
  //Undefined
  let Day;
- console.log (day);
+ console.log (dayy);
  //Null
 let minute = null;
 

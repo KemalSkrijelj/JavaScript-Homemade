@@ -1,0 +1,13 @@
+.spectacular {
+  color: red;
+  font-size: 50px;
+  transform: translateX(200px) rotateX(360deg);
+}
+
+.main-title {
+  transition: all 1s ease;
+
+}
+.fade {
+opacity: 0;
+}

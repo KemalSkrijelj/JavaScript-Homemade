@@ -79,31 +79,31 @@ console.log(izbrojane)
 
 //vezba2
 
-let novcanica = [10,20,50,100,200,500]
-let broj_novcainca = novcanica.length
+// let novcanica = [10,20,50,100,200,500]
+// let broj_novcainca = novcanica.length
 
-let brojac = 0
-let rez1 = 0
-console.log(rez1)
-while(brojac < broj_novcainca){
-  console.log(novcanica[brojac])
-  rez1 = rez1 + novcanica[brojac]
-  brojac ++;
+// let brojac = 0
+// let rez1 = 0
+// console.log(rez1)
+// while(brojac < broj_novcainca){
+//   console.log(novcanica[brojac])
+//   rez1 = rez1 + novcanica[brojac]
+//   brojac ++;
   
-}
-console.log(`Zbir svih brojeva je:${rez1}`)
+// }
+// console.log(`Zbir svih brojeva je:${rez1}`)
 
 
-//vezba3
-let cars = ["audi","bmw","golf","seat","ferrari"]
-let broj_automobila = cars.length
-let brojacc = 0
+// //vezba3
+// let cars = ["audi","bmw","golf","seat","ferrari"]
+// let broj_automobila = cars.length
+// let brojacc = 0
 
-while(brojacc < broj_automobila){
-  console.log(cars[brojacc])
-  brojacc++
-}
-console.log("-----------")
+// while(brojacc < broj_automobila){
+//   console.log(cars[brojacc])
+//   brojacc++
+// }
+// console.log("-----------")
 
 //vezba4
 
@@ -126,3 +126,44 @@ while(counter< broj){
 
 console.log(`Zbir brojeva koji su deljivi sa 2 je ${rezultat1}`)
 console.log(`Zbir brojeva koji su deljivi sa 5 je ${rezultat2}`)
+
+
+//vezba5
+
+const arr = [1,2,3,4,5,6,712,23,12,323,5]
+let parni = 0
+let neparni = 0
+
+let Counter = arr.length - 1
+
+while(Counter >= 0){
+  if(arr[Counter] % 2 == 0){
+    parni = parni + arr[Counter]
+  }else{
+    neparni += arr[Counter]
+  }
+
+  Counter--
+}
+
+
+console.log(`Zbir parnih brojeva je ${parni}, a zbir neparnih je ${neparni}`)
+
+//vezba6
+
+const arrTest = [1,2,3,4,5,6,7,8,9,10,11,12]
+const even =[];
+const odd = [];
+
+let index = 0
+
+while (index < arrTest.length){
+  if(arrTest[index] % 2 == 0){
+    even.push(arrTest[index])
+  }else{
+    odd.push(arrTest[index])
+  }
+  index++
+}
+console.log(`Parni brojevi koji su pushani su ${even}`)
+console.log(`Neparni brojevi koji su pushani su ${odd}`)

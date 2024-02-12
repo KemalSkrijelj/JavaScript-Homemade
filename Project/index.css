@@ -28,14 +28,14 @@ background:rgb(160, 211, 224);
 .hihat-pad{
   background:rgb(224, 194, 160);
 } 
-.kick-pad:active{
-  background:rgb(160, 211, 224);
+.kick-pad.active{
+  background: rgb(59, 197, 231);
 }
-.snare-pad:active{
-  background:rgb(224, 160, 208);
+.snare-pad.active{
+  background: rgb(218, 58, 178);
 }
-.hihat-pad:active{
-  background:rgb(224, 194, 160);
+.hihat-pad.active{
+  background: rgb(241, 158, 64);
 }
 .sequencer {
   display: flex;
@@ -89,4 +89,33 @@ select {
   font-size: 1rem;
   margin-left: rem;
 }
+.tempo {
+  width: 30%;
+}
+.tempo-slider{
+  padding: 0.2rem;
+  -webkit-appearance: none;
+  margin: 1rem 0rem;
+  width: 100%;
+  position: relative;
+  background-color: rgb(88, 88, 88);
+  cursor: pointer;
+  border-radius: 1rem;
+}
+.tempo p{
+  font-size: 1.5rem;
+  text-align: center;
+}
 
+.mute:active{
+  background: rgb(182, 182, 182);
+}
+
+@keyframes playTrack {
+  from{
+   transform: scale(1);
+  }
+  to {
+   transform: scale(1.2);
+  }
+}

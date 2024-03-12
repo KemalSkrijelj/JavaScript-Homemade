@@ -20,7 +20,6 @@ function animateSlides() {
    slideTl.fromTo(revealImg, {x:"0%"}, {x:"100%"});
    slideTl.fromTo(img, {scale:2}, {scale:1}, '-=1');
    slideTl.fromTo(revealText, {x:"0%"}, {x:"100%"}, "-=0.75")
-   slideTl.fromTo(nav, {y:"-100%"}, {y:"0%"}, "-=0.5")
    
    slideScene = new ScrollMagic.Scene({
     triggerElement: slide,
@@ -122,7 +121,6 @@ barba.init({
     beforeEnter(){
       logo.href = '../index.html';
       detailAnimations()
-      gsap.fromTo('.nav-header', 1, {y:"100%"}, {y:"0%", ease:'power2.inOut'})
      },
      beforeLeave(){
       controller.destroy()
@@ -146,6 +144,8 @@ barba.init({
       const tl = gsap.timeline({default: {ease:'power2.inOut'}});
       tl.fromTo('.swipe', 1, {y:'0%'}, {y:'100%', stagger:0.2, onComplete: done}, "-=0.5")
       tl.fromTo(next.container,1,{ opacity: 0 }, { opacity: 1}) 
+      tl.fromTo('.nav-header', 1, {y:"-100%"}, {y:"0%", ease:'power2.inOut'}, '-=1.5')
+
      }
     }
   ]

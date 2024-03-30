@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hexa</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="logo">
+    <img src="img/logo.png" alt="">
+  </div>
+  <h1>Drustvena mreza namenjena etickim H4K3R1M4</h1>
+
+  <div class="main-wrapper">
+    <form id="login-form">
+      <h2>Login</h2>
+
+      <div>
+        <label>Email:</label>
+        <input type="email" name="email" id="login_email" placeholder="nikonikolic@gmail.com">
+      </div>
+
+      <div>
+        <label>Lozinka:</label>
+        <input type="password" name="lozinka" id="login_lozinka" placeholder="*********">
+      </div>
+
+      <div>
+        <button>Uloguj se</button>
+      </div>
+    </form>
+  </div>
+  <div class="no-acc-register">
+    <p>Nemas nalog?</p>
+    <button id="registracija">Registruj se!</button>
+  </div>
+  
+  <div class="custom-modal">
+    <button id="close-modal">X</button>
+
+    <form id="registrationForm">
+      <h2>Registracija korisnika</h2>
+    
+      <div>
+        <label for="korisnicko_ime">Korisnicko ime:</label>
+        <input type="text" name="korisnicko_ime" id="korisnicko_ime" placeholder="niko.nikolic1">
+      </div>
+
+      <div>
+        <label for="email">Email adresa:</label>
+        <input type="email" name="email" id="register_email" placeholder="nikonikolic@gmail.com">
+      </div>
+
+      <div>
+        <label for="lozinka">Lozinka:</label>
+        <input type="password" name="lozinka" id="register_lozinka" placeholder="*********">
+      </div>
+
+      <div>
+        <label>Ponovi lozinkau:</label>
+        <input type="password" name="ponovi-lozinku" id="ponovi_lozinku" placeholder="*********">
+      </div>
+      
+      <div>
+        <button>Registruj se</button>
+      </div>
+    </form>
+    
+  </div>
+  <script src="js/index.js"></script>
+</body>
+</html>

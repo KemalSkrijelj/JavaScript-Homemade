@@ -22,13 +22,47 @@ class User {
    })
    .then(response => response.json())
    .then(data => {
-    let session = new Session();
-    session.user_id = data.id;
+    let session_id = new Session();
+    session_id.user_id = data.id;
     session.startSession()
 
     window.location.href = 'hexa.html'
   })
  }
+
+ async get(){
+    let api_url = this.api_url + '/users/' + user_id
+
+    let response = await fetch (api_url)
+    let data = await response.json()
+
+
+    return data
+ }
+ edit(){
+    let data = {
+      username: this.username,
+      email: this.email
+    }
+    data = JSON.stringify(data)
+
+    let session_id = new Session()
+    session = session_id.getSession();
+
+    fetch(this.api_url + '/users/' + session,{
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: data
+    })
+    .then(response => response.json())
+    .then(data => {
+      window.location.href = 'hexa.html'
+    })
+ }
+
+
  login(){
   fetch(this.api_url + '/users')
   .then(response => response.json())
@@ -48,6 +82,20 @@ class User {
     if (login_successful === 0) {
       alert('Pogresan email ili lozinka')
     }
+  })
+ }
+ delete(){
+  let session_id = new Session()
+  session = session_id.getSession()
+  fetch(this.api_url + '/users/' + session, {
+    method: "DELETE"
+  })
+  .then(response => response.json())
+  .then(data => {
+
+  let session_id = new Session()
+    session_id.destroySession()
+    window.location.href = "/"
   })
  }
 }

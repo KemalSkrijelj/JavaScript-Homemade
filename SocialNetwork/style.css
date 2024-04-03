@@ -108,3 +108,28 @@ form ul li {
   border: 5px solid white;
   margin-bottom: 20px;
 }
+.inner-container.right-side form{
+  display: flex;
+  height: 100px;
+}
+.inner-container.right-side form textarea{
+  width: 85%;
+  border: 0;
+  padding: 10px;
+  resize: none;
+  outline-color: green;
+}
+.inner-container.right-side form button {
+  border: 0;
+  width: 15%;
+}
+#deleteProfile {
+  border: 2px solid red;
+  color: red;
+  padding: 5px 15px;
+}
+#deleteProfile:hover {
+  background-color: red;
+  border:2px solid white;
+  color: white;
+}

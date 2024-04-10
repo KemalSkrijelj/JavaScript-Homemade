@@ -145,6 +145,30 @@ form ul li {
   margin-bottom: 10px;
   font-size: 22px;
 }
+#allPostWrapper .single-post .post-actions{
+  display: flex;
+  justify-content: space-between;
+  color: grey;
+}
+#allPostWrapper .single-post .post-actions div button.like-btn{
+  background-image: url(img/like.png);
+  padding: 5px 15px 5px 40px;
+  background-repeat: no-repeat;
+  background-position: 10px;
+  border: 0;
+}
+#allPostWrapper .single-post .post-actions div button.comment-btn{
+  background-image: url(img/comment.png);
+  padding: 5px 15px 5px 40px;
+  background-repeat: no-repeat;
+  background-position: 10px;
+  border: 0;
+}
+#allPostWrapper .single-post .post-actions div button.remove-btn{
+  border-color: red;
+  padding: 5px 15px;
+  color: red;
+}
 #allPostsWrapper .single-post .post-commments form{
   height: 30px;
   margin-top: 15px;
@@ -157,3 +181,7 @@ form ul li {
   width: 15%;
   background-color: grey;
 }
+#allPostsWrapper .single-post .post-commments  {
+  display: none;
+}
+

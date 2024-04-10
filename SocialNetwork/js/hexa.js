@@ -64,6 +64,8 @@ document.querySelector("#postForm").addEventListener('submit',  e => {
 
     let current_user = new User()
     current_user = await current_user.get(session);
+
+    let html = document.querySelector('#allPostWrapper').innerHTML
     
     let delete_post_html = '';
 
@@ -91,15 +93,81 @@ document.querySelector("#postForm").addEventListener('submit',  e => {
                                                                  </div>
                                                             </div>
                                                             
-                                                            `
+                                                            ` + html
   }
   createPost()
 })
 
-const commentPostSubmit = event => {
+async function getAllPosts() {
+  let allPost = new Post()
+  allPost = await allPost.getAllPosts()
 
+  
+  allPost.forEach(post => {
+    async function getPostUser(){
+
+    let user = new User()
+    user = await user.get(post.user_id)
+
+    let html = document.querySelector('#allPostsWrapper').innerHTML
+
+    let delete_post_html = '';
+
+    if (session === post.user_id) {
+      delete_post_html = ` <button class="remove-btn" onclick="removeMyPost(this)">Remove</button>` 
+    }
+
+    document.querySelector('#allPostsWrapper').innerHTML = `<div class="single-post" data-post_id="${post.id}"
+                                                            <div class="post-content">${post.content}</div>
+
+                                                             <div class = "post-actions">
+                                                             <p><b>Autor:</b> ${user.username}</p>
+                                                            <div>
+                                                            <button onclick="likePost(this)" class="likePostJS like-btn"><span>${post.likes}</span>Likes</button>
+                                                           <button class="comment-btn" onclick="commentPost(this)">Comments</button>
+                                                            ${delete_post_html}
+                                                         </div>
+                                                       </div?>
+                                                
+                                                        <div class="post-commments">
+                                                             <form>
+                                                              <input placeholder="Napisi komentar..." type="text">
+                                                              <button onclick="commentPostSubmit(event)">Comment</button>
+                                                             </form>
+                                                            </div>
+                                                          </div> ` + html;
+    }
+    getPostUser()
+  });
+}
+getAllPosts()
+
+const commentPostSubmit = e => {
+  e.preventDefault()
+
+  let btn = e.target
+  btn.setAttribute('disabled', 'true')
+
+  let main_post_el = btn.closest('.single-post')
+  let post_id = main_post_el.getAttribute('data-post-id')
+
+  let html = main_post_el.querySelector('.post-commments').innerHTML
+
+  let comment_value = main_post_el.querySelector('input').value;
+  
+  console.log(comment_value)
 }
 
 const removeMyPost = el => {
 
 } 
+const likePost = el => {
+
+}
+
+const commentPost = btn => {
+  let main_post_el = btn.closest('.single-post')
+  let post_id = main_post_el.getAttribute('data-post_id')
+
+  main_post_el.querySelector('post-commments').style.display = 'block'
+}

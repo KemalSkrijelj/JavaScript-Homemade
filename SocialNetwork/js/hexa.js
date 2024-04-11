@@ -151,11 +151,11 @@ const commentPostSubmit = e => {
   let main_post_el = btn.closest('.single-post')
   let post_id = main_post_el.getAttribute('data-post-id')
 
-  let html = main_post_el.querySelector('.post-commments').innerHTML
-
   let comment_value = main_post_el.querySelector('input').value;
+  main_post_el.querySelector('input').value = '';
   
-  console.log(comment_value)
+  main_post_el.querySelector('.post-commments').innerHTML += `<div class="single-comment">${comment_value}</div>`
+
 }
 
 const removeMyPost = el => {

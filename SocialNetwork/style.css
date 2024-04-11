@@ -184,4 +184,9 @@ form ul li {
 #allPostsWrapper .single-post .post-commments  {
   display: none;
 }
+#allPostsWrapper .single-post .post-commments .single-comment {
+  border: 1px dotted green;
+  padding: 10px;
+  margin-top: 10px;
+}
 

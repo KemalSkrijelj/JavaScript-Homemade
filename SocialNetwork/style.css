@@ -97,7 +97,25 @@ form ul li {
   border: 1px solid green;
   padding: 15px;
 }
-.inner-container .left-side{
+.inner-container .left-side {
+  text-align: center;
+  position: relative;
+}
+.inner-container button#editAccount{
+  background-color: green;
+  color: white;
+  border: 1px dotted white;
+  padding: 10px;
+  margin-left: 25px;
+}
+.inner-container button#logout{
+  background-color: green;
+  color: white;
+  border: 1px dotted white;
+  padding: 10px;
+  margin-left: 20px;
+}
+.inner-container p {
   text-align: center;
 }
 .inner-container img.profile{

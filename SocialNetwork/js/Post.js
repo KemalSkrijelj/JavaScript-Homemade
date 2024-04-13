@@ -32,4 +32,32 @@ class Post {
     let data = await response.json()
     return data
   }
+
+  like(post_id, likes){
+     let data = {
+       likes: likes
+     }
+     data = JSON.stringify(data)
+     
+     fetch(this.api_url + '/posts/' + this.post_id, {
+      method:"PUT",
+      headers:{
+        'Content-Type': 'application/json'
+      },
+      body: data
+    })
+    .then(response => response.json())
+    .then(data => {alert("Post lajkovan")})
+  }
+
+
+  delete(){
+    fetch(this.api_url + '/posts/' + this.post_id, {
+      method:"DELETE"
+    })
+    .then(response => response.json())
+    .then(data => {
+      alert('Post obrisan')
+    })
+  }
 }
